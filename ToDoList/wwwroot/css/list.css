@@ -1,0 +1,129 @@
+﻿p {
+    margin: 0;
+}
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px 20px;
+    margin: 10px 0;
+    text-align: left !important;
+    transition: 0.5s !important;
+}
+div {
+    transition: 0.5s !important;
+}
+input, button {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color: white;
+    padding: 3px;
+    width: auto;
+    margin: 5px 0;
+    transition: 0.3s;
+    overflow: hidden;
+}
+form button:hover {
+    transform: scale(1.05);
+}
+button:active, button:focus {
+    outline: none;
+}
+#add-elem-button {
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+#add-elem-form {
+    border-radius: 15px 0 15px 15px;
+    margin: 0 0 10px 0;
+}
+.check-done-div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 5%;
+}
+.check-done-div > input{
+    display: none;
+}
+.check-done-div > label {
+    width: 25px;
+    height: 25px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-top: 27px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.check-done-div > label:hover {
+    transform: scale(1.1);
+}
+.header {
+    width: 40%;
+}
+.inputs{
+    display: flex;
+    flex-direction:column;
+    width: 85%;
+}
+.inputs > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: center;
+}
+.inputs label {
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 5%;
+    height: 75%;
+    margin: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.inputs label:hover {
+    transform: scale(1.05);
+}
+.inputs > div > input:nth-child(1) {
+    margin-right: 5px;
+}
+.inputs > div > input:nth-child(n+2) {
+    display: none;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 8%;
+}
+.task-form > .buttons {
+    transform: scaleX(0);
+    width: 0;
+}
+.task-form > .inputs {
+    width: 93%;
+}
+.task-form > .inputs label {
+    transform: scaleX(0);
+}
+.task-form:hover .buttons {
+    transform: scaleX(1);
+    width: 8%;
+}
+.task-form:hover .inputs {
+    width: 85%;
+}
+.task-form:hover > .inputs label {
+    transform: scaleX(1);
+}

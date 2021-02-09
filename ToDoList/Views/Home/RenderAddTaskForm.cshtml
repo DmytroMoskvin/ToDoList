@@ -1,0 +1,30 @@
+﻿@model string
+@{
+    using (Html.BeginForm("Add", "Home", FormMethod.Post, new { @id = Model }))
+    {
+        <div class="check-done-div">
+            <input id="done" type="checkbox" name="done" value="true" />
+            <label for="done" style="background-color: white"></label>
+        </div>
+        <div class="inputs">
+            <div>
+                <input class="header" type="text" name="header" placeholder="Header" />
+                <label for="yellow" style="background-color: #FFFEE0"></label>
+                <input type="radio" id="yellow" name="color" value="#FFFEE0" />
+                <label for="red" style="background-color: #FFBFBF"></label>
+                <input type="radio" id="red" name="color" value="#FFBFBF" />
+                <label for="green" style="background-color: #C5FFBF"></label>
+                <input type="radio" id="green" name="color" value="#C5FFBF" />
+                <label for="blue" style="background-color: #BFF3FF"></label>
+                <input type="radio" id="blue" name="color" value="#BFF3FF" />
+                <label for="white" style="background-color: white"></label>
+                <input type="radio" id="white" name="color" value="white" checked />
+            </div>
+            <input class="text" type="text" name="text" placeholder="Text">
+        </div>
+        <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset" id="reset-button">Reset</button>
+        </div>
+    }
+}

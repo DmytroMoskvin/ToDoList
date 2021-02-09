@@ -1,0 +1,46 @@
+﻿@model List<TaskModel>
+@{
+    if (Model.Count > 0)
+    {
+        foreach (TaskModel taskModel in Model)
+        {
+            using (Html.BeginForm("Change", "Home", FormMethod.Post, new { @class = "task-form", style = "background-color: " + @taskModel.Color }))
+            {
+            <div class="check-done-div">
+                @if (!taskModel.Done)
+                {
+                    <label for="checkDone-@taskModel.Id" style="background-color: white"></label>}
+                else
+                {
+                    <label for="checkDone-@taskModel.Id" style="background-color: white">✓</label>}
+                <input id="checkDone-@taskModel.Id" type="checkbox" name="done" value="true" checked=@taskModel.Done style="display: none" />
+            </div>
+            <div class="inputs">
+                <div>
+                    <input class="header" type="text" name="header" value="@taskModel.Header" placeholder="Header" />
+                    <label for="radio-yellow-@taskModel.Id" style="background-color: #FFFEE0"></label>
+                    <input type="radio" id="radio-yellow-@taskModel.Id" name="color" value="#FFFEE0" />
+                    <label for="radio-red-@taskModel.Id" style="background-color: #FFBFBF"></label>
+                    <input type="radio" id="radio-red-@taskModel.Id" name="color" value="#FFBFBF" />
+                    <label for="radio-green-@taskModel.Id" style="background-color: #C5FFBF"></label>
+                    <input type="radio" id="radio-green-@taskModel.Id" name="color" value="#C5FFBF" />
+                    <label for="radio-blue-@taskModel.Id" style="background-color: #BFF3FF"></label>
+                    <input type="radio" id="radio-blue-@taskModel.Id" name="color" value="#BFF3FF" />
+                    <label for="radio-white-@taskModel.Id" style="background-color: white"></label>
+                    <input type="radio" id="radio-white-@taskModel.Id" name="color" value="white" />
+                </div>
+                <input class="text" type="text" name="text" value="@taskModel.Text" placeholder="Text">
+            </div>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="button">Delete</button>
+            </div>
+            <input type="hidden" name="id" value=@taskModel.Id />
+            }
+        }
+    }
+    else
+    {
+        <h3 style="color: lightgray">No tasks</h3>
+    }
+}

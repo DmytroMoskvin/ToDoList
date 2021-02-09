@@ -1,0 +1,16 @@
+﻿@model List<TaskModel>
+@{
+    ViewData["Title"] = "Home Page";
+    var done = Model.Where(x => x.Done == false).Reverse().ToList();
+    var notDone = Model.Where(x => x.Done == true).ToList();
+}
+
+<div class="text-center">
+    <div style="text-align: right">
+        <button id="add-elem-button" type="button">+</button>
+    </div>
+    @Html.Partial("RenderAddTaskForm", "add-elem-form")
+    @Html.Partial("RenderTaskForms", done)
+    <hr />
+    @Html.Partial("RenderTaskForms", notDone)
+</div>
